@@ -23,7 +23,14 @@ export default function LoginPage() {
   return (
     <main>
       <h1>Login do Administrador</h1>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} style={{
+        maxWidth: 360,
+        margin: '0 auto',
+        background: '#fffbe7',
+        borderRadius: 16,
+        boxShadow: '0 2px 12px #f7c87322',
+        padding: '32px 24px 24px'
+      }}>
         <label>
           Senha:
           <input
@@ -31,12 +38,11 @@ export default function LoginPage() {
             value={password}
             onChange={e => setPassword(e.target.value)}
             required
-            style={{marginLeft: 8}}
           />
         </label>
-        <button type="submit" style={{marginLeft: 8}}>Entrar</button>
+        <button type="submit" style={{width: '100%', margin: '16px 0 0'}}>Entrar</button>
       </form>
-      {error && <p style={{color: 'red'}}>{error}</p>}
+      {error && <div className="error-message" role="alert">{error}</div>}
     </main>
   )
 }

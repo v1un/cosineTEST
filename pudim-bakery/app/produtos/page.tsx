@@ -7,14 +7,18 @@ export default async function ProdutosPage() {
 
   return (
     <main>
-      <h1>Produtos</h1>
-      <ul style={{display: 'flex', flexWrap: 'wrap', gap: 32, listStyle: 'none', padding: 0}}>
+      <h1>Nossos Produtos</h1>
+      <ul className="product-list">
         {produtos.map(produto => (
-          <li key={produto.id} style={{border: '1px solid #ccc', borderRadius: 8, padding: 16, width: 260}}>
-            <img src={produto.imagemUrl} alt={produto.nome} style={{width: '100%', borderRadius: 8}} />
-            <h2>{produto.nome}</h2>
-            <p>{produto.descricao}</p>
-            <strong>R$ {produto.preco.toFixed(2)}</strong>
+          <li className="product-card" key={produto.id}>
+            <img src={produto.imagemUrl} alt={produto.nome} />
+            <h2 style={{marginBottom: 0}}>{produto.nome}</h2>
+            <p style={{margin: '7px 0 0', color: '#7d4c18', textAlign: 'center', fontSize: '1.02rem', minHeight: 40}}>
+              {produto.descricao}
+            </p>
+            <div className="product-price">
+              R$ {produto.preco.toFixed(2)}
+            </div>
           </li>
         ))}
       </ul>
