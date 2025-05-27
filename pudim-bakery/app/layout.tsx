@@ -7,6 +7,7 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
+    // Next.js root layout: only this file should use html/body
     <html lang="pt">
       <body>
         {children}
