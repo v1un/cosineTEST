@@ -16,6 +16,14 @@ export default function AdminPage() {
   const [editing, setEditing] = useState<Produto | null>(null)
   const [form, setForm] = useState({ nome: '', descricao: '', preco: '', imagemUrl: '' })
 
+  // Simple "isLoggedIn" check using a cookie (demo only)
+  useEffect(() => {
+    if (typeof document !== 'undefined') {
+      const isLoggedIn = document.cookie.split(';').some(cookie => cookie.trim().startsWith('admin=1'))
+      if (!isLoggedIn) window.location.href = '/admin/login'
+    }
+  }, [])
+
   useEffect(() => {
     fetch('/api/produtos').then(res => res.json()).then(setProdutos).finally(() => setLoading(false))
   }, [])
