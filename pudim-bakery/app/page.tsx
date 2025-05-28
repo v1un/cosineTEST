@@ -25,8 +25,8 @@ export default function Home() {
         Delicie-se com nossos <strong>pudins</strong> e <strong>bolos caseiros</strong> preparados com carinho.<br/>
         Faça seu pedido online ou venha nos visitar!
       </p>
-      <Link href="/produtos">
-        <button style={{fontSize: '1.15rem', padding: '12px 38px', marginTop: 10}}>Ver Produtos</button>
+      <Link href="/produtos" legacyBehavior>
+        <a style={{fontSize: '1.15rem', padding: '12px 38px', marginTop: 10, display: 'inline-block', textDecoration: 'none', color: 'inherit', background: '#eab676', border: 'none', borderRadius: 6, cursor: 'pointer', textAlign: 'center'}}>Ver Produtos</a>
       </Link>
       <section style={{
         background: '#fffbe7',
